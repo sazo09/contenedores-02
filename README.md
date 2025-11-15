@@ -1,4 +1,13 @@
 # 🐳 Laboratorio Contenedores - Misiones del final del módulo 🕵🏻‍♀️🫆
+# 📝 Notas de desarrollo
+
+A continuación se documentan los cambios y configuraciones realizados en el proyecto:
+- Se ha añadido el proyecto de backend .NET.
+- Se ha creado el archivo `.devcontainer/devcontainer.json` para definir el entorno de desarrollo en contenedores y facilitar la colaboración.
+- Se ha añadido el archivo `.gitattributes` para normalizar los finales de línea y evitar problemas de archivos modificados entre Windows y Linux. Esto fue necesario porque, al trabajar en un Dev Container de VS Code sobre Linux y compartir el repositorio con Windows, Git mostraba archivos ya comprometidos como "modificados" sin haber realizado cambios reales. La causa son las diferencias de finales de línea (LF vs CRLF) entre sistemas operativos. Más información: https://stackoverflow.com/questions/79582140/why-does-git-in-a-dev-container-show-old-files-as-modified-even-with-no-changes
+- Se ha añadido `.github/dependabot.yml` para automatizar la actualización de dependencias.
+- Se han configurado tareas y depuración en VS Code mediante `.vscode/launch.json` y `.vscode/tasks.json`.
+- Se ha creado el archivo `contenedores-02.sln` para facilitar la gestión de la solución en Visual Studio y herramientas compatibles.
 
 [Laboratorio Docker](images/Laboratorio%20Docker.png)
 
