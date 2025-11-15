@@ -1,0 +1,6 @@
+# Normalize line endings for Windows scripts
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf
+
+# Normalize line endings for all other files
+* text=auto
