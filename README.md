@@ -1,6 +1,6 @@
 # 🐳 Laboratorio Contenedores - Misiones del final del módulo 🕵🏻‍♀️🫆
 
-![Laboratorio Docker](images/Laboratorio%20Docker.png)
+[Laboratorio Docker](images/Laboratorio%20Docker.png)
 
 >[!IMPORTANT]
 > Antes de lanzarte a contenerizar todo, ¡relájate y prueba la aplicación tal como está! 😌 Lo único que necesitas es tener MongoDB funcionando. Empieza creando MongoDB en Docker y usa un cliente como MongoDB Compass (¡que ya viste en clase!) para añadir datos que tu API pueda devolver. A partide aquí ya estás list@ para comprobar lo que has aprendido.
@@ -35,7 +35,7 @@
 
 __Tip para backend__: Antes de intentar contenerizar y llevar a cabo todos los pasos del ejercicio se recomienda intentar ejecutar la aplicación sin hacer cambios en ella. En este caso, lo único que es posible que “no tengamos a mano” es el MongoDB. Por lo que empieza por crear este en Docker, usa un cliente como MongoDB Compass para añadir datos que pueda devolver la API.
 
-![Mongo compass](./images/mongodbcompass.png)
+[Mongo compass](./images/mongodbcompass.png)
 
 > 💎 **Pro Tip**: Abre Visual Studio Code directamente desde la carpeta `backend` para hacer las pruebas. ¡Te ahorrará tiempo! Para ejecutar el código:
 > - .NET stack: `dotnet run` 
@@ -44,7 +44,7 @@ __Tip para backend__: Antes de intentar contenerizar y llevar a cabo todos los p
 **🎨 Para el Frontend**: 
 Abre la carpeta frontend en VS Code y ejecuta `npm install` para instalar las dependencias. Luego `npm start` y ¡voilà! Tu navegador debería mostrar algo así:
 
-![Topics](./images/topics.png)
+[Topics](./images/topics.png)
 
 ## 🎪 Misión 2: ¡Docker Compose al Rescate!
 
