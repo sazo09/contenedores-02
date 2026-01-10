@@ -121,7 +121,9 @@ Está compuesta de tres componentes principales:
 #### 🐳 Reto 2: Dockerizar el Backend
 1. ✅ Archivo `Dockerfile` del backend 
 2. ✅ Comando para construir la imagen 
+```docker build -t backend-app ./backend```
 3. ✅ Comando para ejecutar el contenedor del backend
+```docker run -d --name backend-dotnet --network lemoncode-network -p 5000:5000 backend-dotnet```
 4. ✅ Prueba REST Client validando que la API responde correctamente
 
 #### 🎨 Reto 3: Dockerizar el Frontend
