@@ -41,10 +41,3 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
-
-
-
-# Docker
-.dockerignore
-compose.yaml
-Dockerfile
