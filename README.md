@@ -129,8 +129,11 @@ Está compuesta de tres componentes principales:
 #### 🎨 Reto 3: Dockerizar el Frontend
 1. ✅ Archivo `Dockerfile` del frontend
 2. ✅ Comando para construir la imagen del frontend
+```docker build -t frontend-app .```
 3. ✅ Comando para ejecutar el contenedor del frontend
+```docker run -d --name frontend-app --network lemoncode-network -p 3000:3000 --env-file .env frontend-app```
 4. ✅ Archivo `.env` o variables de entorno configuradas correctamente
+![alt text](image-1.png)
 
 
 #### 🎪 Reto 4: Docker Compose
