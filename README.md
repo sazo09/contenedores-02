@@ -140,5 +140,8 @@ Está compuesta de tres componentes principales:
 1. ✅ Archivo `compose.yml` completo y documentado con comentarios
 2. ✅ Archivo `.env` (si es necesario) con variables de entorno
 3. ✅ Comando `docker-compose up` ejecutándose exitosamente
+![alt text](image-4.png)
 4. ✅ Captura de pantalla de todos los servicios corriendo (`docker-compose ps`)
+![alt text](image-3.png)
 5. ✅ Captura de pantalla de la aplicación completa en `http://localhost:3000`
+![alt text](image-2.png)
