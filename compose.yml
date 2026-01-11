@@ -1,0 +1,70 @@
+
+# Docker Compose para Lemoncode Challenge
+# Orquesta MongoDB, Backend (.NET) y Frontend (Node.js)
+version: '3.8'
+
+services:
+  # Servicio de base de datos MongoDB
+  mongodb:
+    image: mongo:8.2.1  # Imagen oficial de MongoDB
+    container_name: mongodb  # Nombre del contenedor
+    restart: unless-stopped  # Reinicia a menos que se detenga manualmente
+    ports:
+      - "27017:27017"  # Puerto expuesto para acceso local
+    volumes:
+      - mongo-data:/data/db  # Volumen persistente para datos
+    networks:
+      - lemoncode-network  # Red compartida
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root  # Usuario root
+      MONGO_INITDB_ROOT_PASSWORD: example  # Contraseña root
+    # Puedes agregar más variables si tu backend las requiere
+
+  # Servicio Backend (.NET)
+  backend:
+    build:
+      context: ./backend  # Ruta al Dockerfile del backend
+      dockerfile: Dockerfile
+    container_name: backend-dotnet  # Nombre del contenedor
+    restart: unless-stopped
+    depends_on:
+      - mongodb  # Espera a que MongoDB esté listo
+    ports:
+      - "5000:5000"  # Puerto expuesto para la API
+    networks:
+      - lemoncode-network
+    environment:
+      # Variables de entorno para conexión a MongoDB
+      MONGODB__CONNECTIONSTRING: "mongodb://root:example@mongodb:27017/?authSource=admin"
+      MONGODB__DATABASENAME: "lemoncode"
+      ASPNETCORE_ENVIRONMENT: "Development"
+
+  # Servicio Frontend (Node.js)
+  frontend:
+    build:
+      context: ./frontend  # Ruta al Dockerfile del frontend
+      dockerfile: Dockerfile
+    container_name: frontend-app  # Nombre del contenedor
+    restart: unless-stopped
+    depends_on:
+      - backend  # Espera a que el backend esté listo
+    ports:
+      - "3000:3000"  # Puerto expuesto para la web
+    networks:
+      - lemoncode-network
+    environment:
+      # URL del backend para el frontend
+      API_URL: "http://backend-dotnet:5000/api/classes"
+    # Si usas .env, puedes usar env_file: .env
+
+
+# Volumen persistente para MongoDB
+volumes:
+  mongo-data:
+    driver: local
+
+
+# Red Docker para comunicación entre servicios
+networks:
+  lemoncode-network:
+    driver: bridge
